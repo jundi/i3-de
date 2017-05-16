@@ -1,9 +1,7 @@
 #!/bin/bash
 
-# Laptop screen
-laptop_monitor="eDP1"
 # Primary monitors
-primary_monitors="DP1-1 DP1-2"
+primary_monitors="DP1-1 DP1-2 eDP1"
 
 
 # Function that prints list of connected monitors
@@ -25,35 +23,33 @@ echo -e "Possible outputs:\n$all_monitors"
 echo -e "\n$monitornum connected monitors:\n$connected_monitors"
 
 
-# Choose first connected primary monitor from list (laptop_monitor as fallback)
-primary_monitor=$laptop_monitor
+# Put all primary monitors on left side
+randr_command="xrandr"
+primary_monitor=""
 for monitor in $primary_monitors; do
     if $(isconnected $monitor); then
-	primary_monitor=$monitor
-	break
+	if [[ -z $primary_monitor ]]; then
+	    primary_monitor=$monitor
+	    randr_command="$randr_command --output $monitor --primary --auto"
+	else
+	    randr_command="$randr_command --output $monitor --right-of $left_monitor --auto"
+	fi
+	left_monitor=$monitor
+	# wake up monitor
+	xrandr --output $monitor --auto
+    else
+        randr_command="$randr_command --output $monitor --off"
     fi
 done
 
 echo -e "\nUsing $primary_monitor as primary monitor"
 
 
-# Primary monitor on left side
-randr_command="xrandr --output $primary_monitor --primary --auto"
-# wake up monitor
-xrandr --output $primary_monitor --primary --auto
-
-
 # All other monitors on right side of primary
-left_monitor=$primary_monitor
 for monitor in $all_monitors; do
 
-    # Skip primary monitor
-    if [[ $monitor == $primary_monitor ]]; then
-        continue
-    fi
-
-    # Skip laptop monitor
-    if [[ $monitor == $laptop_monitor ]]; then
+    # Skip primary monitors
+    if echo ${primary_monitors} | grep -q -w ${monitor}; then
         continue
     fi
 
@@ -68,10 +64,6 @@ for monitor in $all_monitors; do
 
 done
 
-# Laptop screen on right side
-if [[ $primary_monitor != $laptop_monitor ]]; then
-    randr_command="$randr_command --output eDP1 --auto --right-of $left_monitor"
-fi
 
 # run xrandr
 echo -e "\nRunning command:\n$randr_command"
@@ -79,6 +71,6 @@ $randr_command
 
 
 # Restart i3
-#i3-msg restart
+i3-msg restart
 
 # vim: sw=4
