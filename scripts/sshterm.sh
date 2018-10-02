@@ -11,5 +11,5 @@ fullpath=$(echo $path | sed "s/~/\/home\/$user/")
 if [[ $server == $localhostname ]]; then
 	termite -d $fullpath
 else
-	termite --hold -e "ssh $server -t \"cd $path; bash --login\""
+	termite --hold -e "ssh $server -t \"export TERM=xterm-256color; cd $path; bash --login\""
 fi
