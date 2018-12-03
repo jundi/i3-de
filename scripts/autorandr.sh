@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Primary monitors
-primary_monitors="DP1-1 DP1-2 eDP1"
+primary_monitors="DP1-1 DP-1-1 DP1-2 DP-1-2 eDP1 eDP-1"
 
 
 # Function that prints list of connected monitors
