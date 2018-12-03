@@ -36,6 +36,7 @@ for monitor in $primary_monitors; do
 	fi
 	left_monitor=$monitor
 	# wake up monitor
+	xrandr --output $monitor --off
 	xrandr --output $monitor --auto
     else
         randr_command="$randr_command --output $monitor --off"
