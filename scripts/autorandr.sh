@@ -38,9 +38,7 @@ for monitor in $primary_monitors; do
         # wake up monitor
         xrandr --output $monitor --off
         xrandr --output $monitor --auto
-    else
-        randr_command="$randr_command --output $monitor --off"
-    fi
+	fi
 done
 
 echo -e "\nUsing $primary_monitor as primary monitor"
