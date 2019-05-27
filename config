@@ -163,11 +163,11 @@ bindsym $mod+u exec i3-sensible-terminal -e "ssh python-dev"
 bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+Shift+u exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+z exec $BROWSER
-bindsym $mod+o exec xlock -mode blank
+bindsym $mod+o exec i3lock-fancy-multimonitor -p --folder=$HOME/.opt/i3lock-fancy-multimonitor
 bindsym $mod+Shift+o exec sh ~/.opt/scripts/autorandr.sh
 bindsym $mod+Shift+m exec sh passmenu
 bindsym $mod+b exec sh ~/.opt/scripts/showclipboard.sh
-bindsym XF86Sleep exec systemctl suspend
+bindsym XF86Sleep exec i3lock-fancy-multimonitor -p --folder=$HOME/.opt/i3lock-fancy-multimonitor & systemctl suspend
 
 # autostart
 exec sh ~/.opt/scripts/autorandr.sh
