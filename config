@@ -198,5 +198,8 @@ workspace 10 output eDP-1
 assign [class="Rocket.Chat+"] → 9
 assign [class="Thunderbird"] → 10
 
+# Draw borders on all windows
+for_window [class="Evince"] border normal 4
+
 # default layout
 workspace_layout stacking
