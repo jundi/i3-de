@@ -155,6 +155,7 @@ bar {
         position top
         status_command i3pystatus -c ~/.config/i3/status.py
         tray_output primary
+        bindsym button3 exec somenu
 }
 
 # application shortcuts
@@ -163,6 +164,7 @@ bindsym $mod+u exec i3-sensible-terminal -e "ssh python-dev"
 bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+Shift+u exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+z exec $BROWSER
+bindsym $mod+x exec firefox --new-window https://navigator-bs.gmx.com/organizer
 bindsym $mod+o exec i3lock -c 151530
 bindsym $mod+Shift+o exec sh ~/.opt/scripts/autorandr.sh
 bindsym $mod+Shift+m exec sh passmenu
@@ -198,8 +200,18 @@ workspace 10 output eDP-1
 assign [class="Rocket.Chat+"] → 9
 assign [class="Thunderbird"] → 10
 
-# Draw borders on all windows
-for_window [class="Evince"] border normal 4
-
 # default layout
 workspace_layout stacking
+
+# thicker borders on all windows
+for_window [window_type="normal"] border normal 5
+new_window normal 5
+new_float normal 5
+
+# colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #66b2dd #ffffff #ff0080   #66b2dd
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
