@@ -178,7 +178,7 @@ exec thunderbird
 exec redshift-gtk
 exec nm-applet
 exec volumeicon
-exec cbatticon
+exec mate-power-manager
 exec xsetroot -solid "#151515"
 
 # mouse

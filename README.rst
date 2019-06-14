@@ -10,10 +10,10 @@ Centos7 packages::
     * pavucontrol
     * xdotool
     * pass
+    * mate-power-manager
 
 Others::
 
     * powerline-fonts
-    * cbatticon
     * termite
     * passmenu
