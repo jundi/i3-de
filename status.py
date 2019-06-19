@@ -20,25 +20,21 @@ STATUS.register("clock",
 #        format="VOL {volume}%",)
 
 STATUS.register("mem",
-                format="MEM {used_mem:5.0f} MiB",)
+                format="MEM {used_mem:5.0f} MiB",
+                divisor=1048576)
 
 STATUS.register("cpu_usage",
-                format="CPU {usage:3.0f}%",)
+                format="CPU {usage:3.0f}%")
 
-STATUS.register(
-    "network",
-    interface="enp0s20f0u1u2",
-    divisor=125000,
-    format_up="{interface}: ↑{bytes_sent:3.0f}Mbps / ↓{bytes_recv:3.0f}Mbps"
-)
+for interface in ["enp0s31f6", "wlp2s0"]:
+    STATUS.register(
+        "network",
+        interface=interface,
+        divisor=125000,
+        format_up=("{interface}: {essid} {quality:3.0f}% "
+                   "↑{bytes_sent}Mbps / ↓{bytes_recv}Mbps")
+    )
 
-STATUS.register(
-    "network",
-    interface="wlp2s0",
-    divisor=125000,
-    format_up=("{essid} {quality:3.0f}%: ↑{bytes_sent:3.0f}Mbps / "
-               "↓{bytes_recv:3.0f}Mbps")
-)
 
 
 STATUS.run()
