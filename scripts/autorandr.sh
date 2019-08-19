@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Primary monitors
-primary_monitors="DP-1 HDMI-1 DP1-1 DP-1-1 DP1-2 DP-1-2 eDP1 eDP-1"
+# Left monitors and primary monitors
+left_monitors="DP-1 HDMI-1 DP1-1 DP-1-1 DP1-2 DP-1-2 eDP1 eDP-1"
+primary_monitors="DP-1 eDP1 eDP-1"
 
 
 # Function that prints list of connected monitors
@@ -23,13 +24,13 @@ echo -e "Possible outputs:\n$all_monitors"
 echo -e "\n$monitornum connected monitors:\n$connected_monitors"
 
 
-# Put all primary monitors on left side
+# Put all left monitors on left side
 randr_command="xrandr"
-primary_monitor=""
-for monitor in $primary_monitors; do
+left_monitor=""
+for monitor in $left_monitors; do
     if $(isconnected $monitor); then
-        if [[ -z $primary_monitor ]]; then
-            primary_monitor=$monitor
+        if [[ -z $left_monitor ]]; then
+            left_monitor=$monitor
             randr_command="$randr_command --output $monitor --primary --auto"
         else
             randr_command="$randr_command --output $monitor --right-of $left_monitor --auto"
@@ -38,17 +39,16 @@ for monitor in $primary_monitors; do
         # wake up monitor
         xrandr --output $monitor --off
         xrandr --output $monitor --auto
-	fi
+    fi
 done
 
-echo -e "\nUsing $primary_monitor as primary monitor"
 
 
-# All other monitors on right side of primary
+# All other monitors on right side of left monitors
 for monitor in $all_monitors; do
 
-    # Skip primary monitors
-    if echo ${primary_monitors} | grep -q -w ${monitor}; then
+    # Skip left monitors
+    if echo ${left_monitors} | grep -q -w ${monitor}; then
         continue
     fi
 
@@ -56,6 +56,7 @@ for monitor in $all_monitors; do
         randr_command="$randr_command --output $monitor --right-of $left_monitor --auto"
         left_monitor=$monitor
         # wake up monitor
+        xrandr --output $monitor --off
         xrandr --output $monitor --auto
     else
         randr_command="$randr_command --output $monitor --off"
@@ -67,6 +68,15 @@ done
 # run xrandr
 echo -e "\nRunning command:\n$randr_command"
 $randr_command
+
+
+# choose primary monitor
+for monitor in $primary_monitors; do
+    if $(isconnected $monitor); then
+        xrandr --output $monitor --primary
+        break
+    fi
+done
 
 
 # Restart i3
