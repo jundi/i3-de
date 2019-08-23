@@ -36,12 +36,8 @@ for monitor in $left_monitors; do
             randr_command="$randr_command --output $monitor --right-of $left_monitor --auto"
         fi
         left_monitor=$monitor
-        # wake up monitor
-        xrandr --output $monitor --off
-        xrandr --output $monitor --auto
     fi
 done
-
 
 
 # All other monitors on right side of left monitors
@@ -55,14 +51,15 @@ for monitor in $all_monitors; do
     if $(isconnected $monitor); then
         randr_command="$randr_command --output $monitor --right-of $left_monitor --auto"
         left_monitor=$monitor
-        # wake up monitor
-        xrandr --output $monitor --off
-        xrandr --output $monitor --auto
     else
         randr_command="$randr_command --output $monitor --off"
     fi
 
 done
+
+
+# Reset everything
+xrandr --auto
 
 
 # run xrandr
