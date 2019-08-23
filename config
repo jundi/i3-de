@@ -186,6 +186,7 @@ exec xsetroot -solid "#151515"
 
 # mouse
 focus_follows_mouse no
+mouse_warping none
 
 # workspaces
 workspace 1 output DP-1
