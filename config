@@ -173,6 +173,9 @@ bindsym $mod+b exec sh ~/.opt/scripts/showclipboard.sh
 bindsym XF86Sleep exec i3lock -c 151530 & systemctl suspend && xset dpms force on
 bindsym Print exec gnome-screenshot
 bindsym Shift+Print exec gnome-screenshot --interactive
+bindsym XF86AudioRaiseVolume exec ponymix increase 10
+bindsym XF86AudioLowerVolume exec ponymix decrease 10
+bindsym XF86AudioMute exec ponymix toggle
 
 # autostart
 exec sh ~/.opt/scripts/autorandr.sh
@@ -183,6 +186,8 @@ exec nm-applet
 exec pasystray
 exec mate-power-manager
 exec xsetroot -solid "#151515"
+exec sh .fehbg
+exec unclutter
 
 # mouse
 focus_follows_mouse no
