@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 
 from i3pystatus import Status
+import netifaces
 
 STATUS = Status(standalone=True)
 
@@ -26,7 +27,7 @@ STATUS.register("mem",
 STATUS.register("cpu_usage",
                 format="CPU {usage:3.0f}%")
 
-for interface in ["enp0s31f6", "wlp2s0"]:
+for interface in netifaces.interfaces():
     STATUS.register(
         "network",
         interface=interface,
@@ -34,7 +35,6 @@ for interface in ["enp0s31f6", "wlp2s0"]:
         format_up=("{interface}: {essid} {quality:3.0f}% "
                    "↑{bytes_sent}Mbps / ↓{bytes_recv}Mbps")
     )
-
 
 
 STATUS.run()
