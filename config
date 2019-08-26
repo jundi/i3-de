@@ -183,7 +183,7 @@ exec rocketchat
 exec thunderbird
 exec redshift-gtk
 exec nm-applet
-exec pasystray
+exec pasystray -a
 exec mate-power-manager
 exec xsetroot -solid "#151515"
 exec sh .fehbg
