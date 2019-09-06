@@ -173,9 +173,9 @@ bindsym $mod+b exec sh ~/.opt/scripts/showclipboard.sh
 bindsym XF86Sleep exec i3lock -c 151530 & systemctl suspend
 bindsym Print exec gnome-screenshot
 bindsym Shift+Print exec gnome-screenshot --interactive
-bindsym XF86AudioRaiseVolume exec ponymix increase 10
-bindsym XF86AudioLowerVolume exec ponymix decrease 10
-bindsym XF86AudioMute exec ponymix toggle
+bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +10
+bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -10
+bindsym XF86AudioMute exec pulsemixer --toggle-mute
 
 # autostart
 exec sh ~/.opt/scripts/autorandr.sh
