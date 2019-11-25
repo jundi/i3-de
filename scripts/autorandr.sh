@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Left monitors and primary monitors
-left_monitors="DP-1 HDMI-1 DP1-1 DP-1-1 DP1-2 DP-1-2 eDP1 eDP-1"
+left_monitors="eDP1 eDP-1 DP-1 HDMI-1 DP1-1 DP-1-1 DP1-2 DP-1-2"
 primary_monitors="DP-1-1 DP-1 eDP1 eDP-1"
 
 
