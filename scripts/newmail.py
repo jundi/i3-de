@@ -31,6 +31,7 @@ mail_boxes.append(MailBox('batch', '~/.mail/mikrosoft/batch', '#FFFF00'))
 mail_boxes.append(MailBox('hiukkanen', '~/.mail/tut/Hiukkanen', '#FF00FF'))
 mail_boxes.append(MailBox('hiukkanen', '~/.mail/gmail/Hiukkanen', '#FF00FF'))
 mail_boxes.append(MailBox('vandaalit', '~/.mail/vandaalit/INBOX', '#999999'))
+mail_boxes.append(MailBox('GMX', '~/.mail/gmx/INBOX/', '#FF00FF'))
 
 
 # print line function
