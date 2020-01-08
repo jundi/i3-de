@@ -177,6 +177,7 @@ bindsym Shift+Print exec gnome-screenshot --interactive
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +10
 bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -10
 bindsym XF86AudioMute exec pulsemixer --toggle-mute
+bindsym $mod+F1 exec sh ~/.opt/scripts/paswitchsink.sh
 
 # autostart
 exec sh ~/.opt/scripts/autorandr.sh
