@@ -196,7 +196,7 @@ focus_follows_mouse no
 mouse_warping none
 
 # workspaces
-workspace 1 output DP-1-1
+workspace 1 output eDP-1
 workspace 2 output DP-1-1
 workspace 3 output DP-1-1
 workspace 4 output DP-1-1
@@ -205,11 +205,11 @@ workspace 6 output DP-1-2
 workspace 7 output DP-1-2
 workspace 8 output DP-1-2
 workspace 9 output DP-1-2
-workspace 10 output eDP-1
+workspace 10 output DP-1-2
 
 # assign applications to workspaces
-assign [class="Rocket.Chat+"] → 10
-assign [class="Thunderbird"] → 10
+assign [class="Rocket.Chat+"] → 1
+assign [class="Thunderbird"] → 1
 
 # default layout
 workspace_layout stacking
