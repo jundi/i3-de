@@ -186,7 +186,7 @@ exec thunderbird
 exec redshift-gtk
 exec nm-applet
 exec pasystray -a
-exec mate-power-manager
+exec cbatticon
 exec xsetroot -solid "#151515"
 exec sh .fehbg
 exec unclutter
