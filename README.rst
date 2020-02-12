@@ -11,6 +11,7 @@ Centos7 packages::
     * xdotool
     * pass
     * mate-power-manager
+    * brightnessctl
 
 Others::
 
