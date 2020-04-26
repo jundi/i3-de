@@ -165,7 +165,7 @@ bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh localhost
 bindsym $mod+Shift+u exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+z exec $BROWSER
 bindsym $mod+M exec $MUA
-bindsym $mod+x exec firefox --new-window https://navigator-bs.gmx.com/organizer
+bindsym $mod+x exec gnome-calendar
 bindsym $mod+o exec i3lock -c 151530
 bindsym $mod+Shift+o exec sh ~/.opt/scripts/autorandr.sh
 bindsym $mod+y exec sleep 1 && xset dpms force off
