@@ -175,12 +175,15 @@ bindsym $mod+b exec sh ~/.opt/scripts/showclipboard.sh
 bindsym XF86Sleep exec i3lock -c 151530 & systemctl suspend
 bindsym Print exec gnome-screenshot
 bindsym Shift+Print exec gnome-screenshot --interactive
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +10
 bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -10
 bindsym XF86AudioMute exec pulsemixer --toggle-mute
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
-bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 bindsym $mod+F1 exec sh ~/.opt/scripts/paswitchsink.sh
+bindsym $mod+F2 exec pulsemixer --toggle-mute
+bindsym $mod+F3 exec pulsemixer --change-volume -10
+bindsym $mod+F4 exec pulsemixer --change-volume +10
 
 # autostart
 exec sh ~/.opt/scripts/autorandr.sh
