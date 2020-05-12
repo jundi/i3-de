@@ -167,7 +167,7 @@ bindsym $mod+z exec $BROWSER
 bindsym $mod+m exec $MUA
 bindsym $mod+x exec gnome-calendar
 bindsym $mod+y exec autorandr -c
-bindsym $mod+Shift+y exec sh ~/.opt/scripts/autorandr.sh 
+bindsym $mod+Shift+y exec sh ~/.opt/scripts/autorandr.sh
 bindsym $mod+o exec i3lock -c 151530
 bindsym $mod+Shift+o exec sleep 1 && xset dpms force off
 bindsym $mod+Shift+m exec sh passmenu
@@ -186,8 +186,8 @@ bindsym $mod+F3 exec pulsemixer --change-volume -10
 bindsym $mod+F4 exec pulsemixer --change-volume +10
 
 # autostart
-exec sh ~/.opt/scripts/autorandr.sh
-exec rocketchat
+exec autorandr -c
+exec rocketchat-desktop
 exec thunderbird
 exec redshift-gtk
 exec nm-applet
