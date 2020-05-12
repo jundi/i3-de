@@ -164,7 +164,7 @@ bindsym $mod+u exec i3-sensible-terminal -e "ssh python-dev"
 bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh localhost
 bindsym $mod+Shift+u exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+z exec $BROWSER
-bindsym $mod+M exec $MUA
+bindsym $mod+m exec $MUA
 bindsym $mod+x exec gnome-calendar
 bindsym $mod+y exec autorandr -c
 bindsym $mod+Shift+y exec sh ~/.opt/scripts/autorandr.sh 
