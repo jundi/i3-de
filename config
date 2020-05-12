@@ -166,9 +166,10 @@ bindsym $mod+Shift+u exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+z exec $BROWSER
 bindsym $mod+M exec $MUA
 bindsym $mod+x exec gnome-calendar
+bindsym $mod+y exec autorandr -c
+bindsym $mod+Shift+y exec sh ~/.opt/scripts/autorandr.sh 
 bindsym $mod+o exec i3lock -c 151530
-bindsym $mod+Shift+o exec sh ~/.opt/scripts/autorandr.sh
-bindsym $mod+y exec sleep 1 && xset dpms force off
+bindsym $mod+Shift+o exec sleep 1 && xset dpms force off
 bindsym $mod+Shift+m exec sh passmenu
 bindsym $mod+b exec sh ~/.opt/scripts/showclipboard.sh
 bindsym XF86Sleep exec i3lock -c 151530 & systemctl suspend
