@@ -172,6 +172,7 @@ bindsym $mod+o exec i3lock -c 151530
 bindsym $mod+Shift+o exec sleep 1 && xset dpms force off
 bindsym $mod+Shift+m exec sh passmenu
 bindsym $mod+b exec sh ~/.opt/scripts/showclipboard.sh
+bindsym $mod+Shift+b exec xsel -p | xsel -b -i
 bindsym XF86Sleep exec i3lock -c 151530 & systemctl suspend
 bindsym Print exec gnome-screenshot
 bindsym Shift+Print exec gnome-screenshot --interactive
