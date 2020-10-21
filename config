@@ -159,6 +159,7 @@ bar {
 }
 
 # application shortcuts
+bindsym $mod+Escape exec xdotool search --class mate-notification-daemon | xargs xdotool windowkill
 bindsym $mod+a exec i3-sensible-terminal
 bindsym $mod+u exec i3-sensible-terminal -e "ssh python-dev"
 bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh localhost
