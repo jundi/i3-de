@@ -159,7 +159,7 @@ bar {
 }
 
 # application shortcuts
-bindsym $mod+Escape exec xdotool search --class mate-notification-daemon | xargs xdotool windowkill
+bindsym $mod+Escape exec xdotool search --class xfce4-notifyd | xargs xdotool windowkill
 bindsym $mod+a exec i3-sensible-terminal
 bindsym $mod+u exec i3-sensible-terminal -e "ssh python-dev"
 bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh localhost
@@ -188,7 +188,6 @@ bindsym $mod+F3 exec pulsemixer --change-volume -10
 bindsym $mod+F4 exec pulsemixer --change-volume +10
 
 # autostart
-exec autorandr -c
 exec rocketchat-desktop
 exec thunderbird
 exec redshift-gtk
@@ -198,7 +197,6 @@ exec cbatticon -i symbolic -l 5
 exec xsetroot -solid "#151515"
 exec sh .fehbg
 exec unclutter
-exec /usr/lib/xfce4/notifyd/xfce4-notifyd
 
 # mouse
 focus_follows_mouse no
