@@ -6,15 +6,16 @@ Requirements
 | brightnessctl             | (not required)                      | brightnessctl                                                          |
 | cbatticon                 | cbatticon                           | (Install from [soure](https://github.com/valr/cbatticon))              |
 | feh                       | feh                                 | (not required)                                                         |
-| i3pystatus                | ?                                   | i3pystatus, colour, basiciw, netifaces (PyPi)                          |
+| i3pystatus                | i3pystatus (AUi3pystatus (AUR))                    | i3pystatus, colour, basiciw, netifaces (PyPi)                          |
 | nm-applet                 | network-manager-applet              | network-manager-applet                                                 |
 | passmenu                  | pass                                | (Install from [source](https://github.com/cdown/passmenu))             |
 | pass                      | pass                                | pass                                                                   |
 | pasystray                 | pasystray-gtk3-standalone           | (Install from [source](https://github.com/christophgysin/pasystray))   |
 | pavucontrol               | pavucontrol                         | pavucontrol                                                            |
 | powerline-fonts           | otf-inconsolata-powerline-git (AUR) | ?                                                                      |
-| pulsemixer                | ?                                   | pulsemixer (PyPi)                                                      |
+| pulsemixer                | pulsemixer                          | pulsemixer (PyPi)                                                      |
 | redshift                  | redshift                            | redshift-gtk                                                           |
+| somenu                    | somenu (AUR)                        | Install from [source](https://github.com/tmccombs/somenu))             |
 | terminus font             | terminus-font, terminus-font-otb    | terminus-fonts, terminus-fonts-console                                 |
 | termite                   | termite                             | (Install from [source](https://github.com/thestinger/termite))         |
 | unclutter                 | unclutter                           | (Install from [source](https://github.com/Airblader/unclutter-xfixes)) |
