@@ -197,6 +197,7 @@ exec cbatticon -i symbolic -l 5
 exec xsetroot -solid "#151515"
 exec sh .fehbg
 exec unclutter
+exec /usr/lib/xfce4/notifyd/xfce4-notifyd
 
 # mouse
 focus_follows_mouse no
