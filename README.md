@@ -1,29 +1,26 @@
 Requirements
 ------------
 
-|                           | Arch Linux package                  | Centos7 RPM                                                            |
-|---------------------------|-------------------------------------|------------------------------------------------------------------------|
-| brightnessctl             | (not required)                      | brightnessctl                                                          |
-| cbatticon                 | cbatticon                           | (Install from [soure](https://github.com/valr/cbatticon))              |
-| feh                       | feh                                 | (not required)                                                         |
-| i3pystatus                | i3pystatus (AUi3pystatus (AUR))                    | i3pystatus, colour, basiciw, netifaces (PyPi)                          |
-| nm-applet                 | network-manager-applet              | network-manager-applet                                                 |
-| passmenu                  | pass                                | (Install from [source](https://github.com/cdown/passmenu))             |
-| pass                      | pass                                | pass                                                                   |
-| pasystray                 | pasystray-gtk3-standalone           | (Install from [source](https://github.com/christophgysin/pasystray))   |
-| pavucontrol               | pavucontrol                         | pavucontrol                                                            |
-| powerline-fonts           | otf-inconsolata-powerline-git (AUR) | ?                                                                      |
-| pulsemixer                | pulsemixer                          | pulsemixer (PyPi)                                                      |
-| redshift                  | redshift                            | redshift-gtk                                                           |
-| somenu                    | somenu (AUR)                        | Install from [source](https://github.com/tmccombs/somenu))             |
-| terminus font             | terminus-font, terminus-font-otb    | terminus-fonts, terminus-fonts-console                                 |
-| termite                   | termite                             | (Install from [source](https://github.com/thestinger/termite))         |
-| unclutter                 | unclutter                           | (Install from [source](https://github.com/Airblader/unclutter-xfixes)) |
-| xfce4 notification daemon | xfce4-notifyd                       | xfce4-notifyd                                                          |
-| xdotool                   | xdotool                             | xdotool                                                                |
-| xorg-x11 session          | (not required)                      | xorg-x11-session                                                       |
-| xsel                      | xsel                                | xsel                                                                   |
-| xsetroot                  | xorg-xsetroot                       | xsetroot                                                               |
-
-
-
+|                           | Arch Linux package                  | Centos7 RPM                                                            | Centos8 RPM                                                                                                                                                            |
+|---------------------------|-------------------------------------|------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| brightnessctl             | (not required)                      | brightnessctl                                                          | (Install from [source](https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/28/Everything/source/tree/Packages/b/brightnessctl-0.3-2.fc28.src.rpm))    |
+| cbatticon                 | cbatticon                           | (Install from [soure](https://github.com/valr/cbatticon))              | (Install from [source](https://github.com/valr/cbatticon))                                                                                                             |
+| feh                       | feh                                 | (not required)                                                         | (not required)                                                                                                                                                         |
+| i3pystatus                | i3pystatus (AUR)                    | i3pystatus, colour, basiciw, netifaces (PyPi)                          | i3pystatus, colour, basiciw, netifaces (PyPi)                                                                                                                          |
+| nm-applet                 | network-manager-applet              | network-manager-applet                                                 | network-manager-applet                                                                                                                                                 |
+| passmenu                  | pass                                | (Install from [source](https://github.com/cdown/passmenu))             | (Install from [source](https://github.com/cdown/passmenu))                                                                                                             |
+| pass                      | pass                                | pass                                                                   | pass                                                                                                                                                                   |
+| pasystray                 | pasystray-gtk3-standalone           | (Install from [source](https://github.com/christophgysin/pasystray))   | (Install from [source](https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/28/Everything/source/tree/Packages/p/pasystray-0.6.0-7.fc28.src.rpm))      |
+| pavucontrol               | pavucontrol                         | pavucontrol                                                            | pavucontrol                                                                                                                                                            |
+| powerline-fonts           | otf-inconsolata-powerline-git (AUR) | ?                                                                      | (Install from [source](https://github.com/powerline/fonts))                                                                                                            |
+| pulsemixer                | pulsemixer                          | pulsemixer (PyPi)                                                      | pulsemixer (PyPi)                                                                                                                                                      |
+| redshift                  | redshift                            | redshift-gtk                                                           | (Install from [source](https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/28/Everything/source/tree/Packages/r/redshift-1.11-8.fc28.src.rpm<Paste>)) |
+| somenu                    | somenu (AUR)                        | Install from [source](https://github.com/tmccombs/somenu))             | ?                                                                                                                                                                      |
+| terminus font             | terminus-font, terminus-font-otb    | terminus-fonts, terminus-fonts-console                                 | terminus-fonts, terminus-fonts-console                                                                                                                                 |
+| termite                   | termite                             | (Install from [source](https://github.com/thestinger/termite))         | (Install from [source](https://github.com/thestinger/termite))                                                                                                         |
+| unclutter                 | unclutter                           | (Install from [source](https://github.com/Airblader/unclutter-xfixes)) | (Install from [source](https://archives.fedoraproject.org/pub/archive/fedora/linux/releases/28/Everything/source/tree/Packages/u/unclutter-8-17.fc28.src.rpm))         |
+| xfce4 notification daemon | xfce4-notifyd                       | xfce4-notifyd                                                          | xfce4-notifyd                                                                                                                                                          |
+| xdotool                   | xdotool                             | xdotool                                                                | xdotool                                                                                                                                                                |
+| xorg-x11 session          | (not required)                      | xorg-x11-session                                                       | ?                                                                                                                                                                      |
+| xsel                      | xsel                                | xsel                                                                   | xsel                                                                                                                                                                   |
+| xsetroot                  | xorg-xsetroot                       | xsetroot                                                               | xsetroot                                                                                                                                                               |
