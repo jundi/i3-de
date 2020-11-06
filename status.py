@@ -33,7 +33,8 @@ for interface in netifaces.interfaces():
         interface=interface,
         divisor=125000,
         format_up=("{interface}: {essid} {quality:3.0f}% "
-                   "↑{bytes_sent}Mbps / ↓{bytes_recv}Mbps")
+                   "↑{bytes_sent}Mbps / ↓{bytes_recv}Mbps"),
+        color_down='#444444'
     )
 
 
