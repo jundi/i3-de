@@ -165,6 +165,7 @@ bindsym $mod+u exec i3-sensible-terminal -e "ssh $DEFAULT_VM"
 bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh localhost
 bindsym $mod+Shift+u exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+z exec $BROWSER
+bindsym $mod+Shift+z exec $BROWSER --private-window
 bindsym $mod+m exec $MUA
 bindsym $mod+x exec gnome-calendar
 bindsym $mod+y exec autorandr -c
