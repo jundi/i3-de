@@ -1,3 +1,3 @@
 #!/bin/bash
-notify-send -t 2000 "clipboard" "`xsel -b`"
-notify-send -t 2000 "primary" "`xsel -p`"
+notify-send -t 2000 "clipboard" "`xsel -bo`"
+notify-send -t 2000 "primary" "`xsel -po`"
