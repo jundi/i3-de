@@ -57,6 +57,9 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 #
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+input * {
+        xkb_layout "de"
+}
 
 ### Key bindings
 #
@@ -158,7 +161,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
     bindsym $mod+space focus mode_toggle
 
     # Move focus to the parent container
-    bindsym $mod+a focus parent
+    bindsym $mod+p focus parent
 #
 # Scratchpad:
 #
@@ -213,5 +216,43 @@ bar {
         inactive_workspace #32323200 #32323200 #5c5c5c
     }
 }
+
+# mouse
+focus_follows_mouse no
+
+# default layout
+workspace_layout stacking
+
+# thicker borders on all windows
+for_window [window_type="normal"] border normal 5
+default_border normal 5
+default_floating_border normal 5
+
+# colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #4c7899 #66b2dd #ffffff #ff0080   #66b2dd
+client.focused_inactive #333333 #5f676a #ffffff #484e50   #5f676a
+client.unfocused        #333333 #222222 #888888 #292d2e   #222222
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+# Keyboard shortcuts
+bindsym $mod+Shift+m exec sh passmenu
+bindsym $mod+n exec nmcli d wifi rescan
+bindsym $mod+z exec $BROWSER
+bindsym $mod+a exec $term
+bindsym $mod+u exec $term -e "ssh $DEFAULT_VM"
+bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh localhost
+bindsym $mod+Shift+u exec sh ~/.opt/scripts/sshterm.sh
+bindsym $mod+Shift+z exec $BROWSER --private-window
+bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
+bindsym XF86MonBrightnessUp exec brightnessctl s +10%
+bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +10
+bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -10
+bindsym XF86AudioMute exec pulsemixer --toggle-mute
+bindsym $mod+F1 exec sh ~/.opt/scripts/paswitchsink.sh
+bindsym $mod+F2 exec pulsemixer --toggle-mute
+bindsym $mod+F3 exec pulsemixer --change-volume -10
+bindsym $mod+F4 exec pulsemixer --change-volume +10
 
 include /etc/sway/config.d/*
