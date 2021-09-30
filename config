@@ -18,7 +18,7 @@ set $term alacritty
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
-set $menu dmenu_path | dmenu | xargs swaymsg exec --
+set $menu rofi -show drun -show-icons
 
 ### Output configuration
 #
@@ -203,22 +203,22 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %l:%M:%S %p'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+# bar {
+#     position top
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%F W%V %R %z'; do sleep 1; done
+#
+#     colors {
+#         statusline #ffffff
+#         background #323232
+#     }
+# }
 
 # mouse
 focus_follows_mouse no
+seat seat0 hide_cursor 3000
 
 # default layout
 workspace_layout stacking
@@ -237,7 +237,7 @@ client.urgent           #2f343a #900000 #ffffff #900000   #900000
 client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
 
 # Keyboard shortcuts
-bindsym $mod+Shift+m exec sh passmenu
+bindsym $mod+Shift+m exec sh rofi-pass
 bindsym $mod+n exec nmcli d wifi rescan
 bindsym $mod+z exec $BROWSER
 bindsym $mod+m exec $MUA
@@ -250,6 +250,7 @@ bindsym $mod+Shift+z exec $BROWSER --private-window
 bindsym $mod+o exec swaylock -c 151530
 bindsym $mod+c exec sh ~/.opt/scripts/showclipboard.sh
 bindsym $mod+Shift+c exec xsel -p | xsel -b -i
+bindsym XF86Sleep exec swaylock -c 151530
 bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
 bindsym XF86MonBrightnessUp exec brightnessctl s +10%
 bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +10
@@ -263,29 +264,17 @@ bindsym $mod+F4 exec pulsemixer --change-volume +10
 # bindsym $mod+y exec autorandr -c
 # bindsym $mod+Shift+y exec sh ~/.opt/scripts/autorandr.sh
 # bindsym $mod+Shift+o exec sleep 1 && xset dpms force off
-# bindsym XF86Sleep exec i3lock -c 151530
-# bindsym Print exec gnome-screenshot
-# bindsym Shift+Print exec gnome-screenshot --interactive
-# bindsym XF86MonBrightnessDown exec brightnessctl s 10%-
-# bindsym XF86MonBrightnessUp exec brightnessctl s +10%
-# bindsym XF86AudioRaiseVolume exec pulsemixer --change-volume +10
-# bindsym XF86AudioLowerVolume exec pulsemixer --change-volume -10
-# bindsym XF86AudioMute exec pulsemixer --toggle-mute
-# bindsym $mod+F1 exec sh ~/.opt/scripts/paswitchsink.sh
-# bindsym $mod+F2 exec pulsemixer --toggle-mute
-# bindsym $mod+F3 exec pulsemixer --change-volume -10
-# bindsym $mod+F4 exec pulsemixer --change-volume +10
+bindsym Home exec grim
+bindsym Shift+Home exec grim -g "$(slurp)"
+
 
 # autostart
-#exec rocketchat-desktop
-#exec thunderbird
-#exec redshift-gtk
+exec rocketchat-desktop
+exec waybar
+exec gammastep-indicator
 exec nm-applet --indicator
 #exec pasystray -a
 #exec cbatticon -i symbolic -l 5
-#exec xsetroot -solid "#151515"
-#exec sh .fehbg
-#exec unclutter
 #exec /usr/lib/xfce4/notifyd/xfce4-notifyd
 
 include /etc/sway/config.d/*
