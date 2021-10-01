@@ -58,7 +58,7 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 input * {
-        xkb_layout "de"
+        xkb_layout "fi"
 }
 
 ### Key bindings
@@ -248,6 +248,7 @@ bindsym $mod+Shift+a exec sh ~/.opt/scripts/sshterm.sh localhost
 bindsym $mod+Shift+u exec sh ~/.opt/scripts/sshterm.sh
 bindsym $mod+Shift+z exec $BROWSER --private-window
 bindsym $mod+o exec swaylock -c 151530
+bindsym $mod+Shift+o exec exec swayidle -w timeout 1 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on "; pkill -nx swayidle'
 bindsym $mod+c exec sh ~/.opt/scripts/showclipboard.sh
 bindsym $mod+Shift+c exec xsel -p | xsel -b -i
 bindsym XF86Sleep exec swaylock -c 151530
@@ -262,10 +263,9 @@ bindsym $mod+F3 exec pulsemixer --change-volume -10
 bindsym $mod+F4 exec pulsemixer --change-volume +10
 # bindsym $mod+Escape exec xdotool search --class xfce4-notifyd | xargs xdotool windowkill
 # bindsym $mod+y exec autorandr -c
-# bindsym $mod+Shift+y exec sh ~/.opt/scripts/autorandr.sh
-# bindsym $mod+Shift+o exec sleep 1 && xset dpms force off
-bindsym Home exec grim
-bindsym Shift+Home exec grim -g "$(slurp)"
+bindsym $mod+Shift+y exec wdisplays
+bindsym Print exec grim
+bindsym Shift+Print exec grim -g "$(slurp)"
 
 
 # autostart
@@ -273,8 +273,8 @@ exec rocketchat-desktop
 exec waybar
 exec gammastep-indicator
 exec nm-applet --indicator
+exec swayidle -w timeout 300 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' before-sleep 'swaylock -f -c 505050'
 #exec pasystray -a
 #exec cbatticon -i symbolic -l 5
-#exec /usr/lib/xfce4/notifyd/xfce4-notifyd
 
 include /etc/sway/config.d/*
