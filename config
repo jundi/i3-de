@@ -59,8 +59,13 @@ output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 input * {
-        xkb_layout "fi"
+        xkb_layout "fi(nodeadkeys)"
+        xkb_options "compose:rctrl"
+
 }
+# Keyboard layout modifications
+bindsym aring exec wtype /
+bindsym Shift+aring exec wtype "|"
 
 ### Key bindings
 #
@@ -269,7 +274,6 @@ bindsym Print       exec grimshot --notify save active
 bindsym Shift+Print exec grimshot --notify save area
 bindsym $alt+Print  exec grimshot --notify save output
 bindsym Ctrl+Print  exec grimshot --notify save window
-
 
 # autostart
 exec rocketchat-desktop
